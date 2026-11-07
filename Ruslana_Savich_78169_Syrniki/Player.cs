@@ -2,5 +2,15 @@
 {
     internal class Player
     {
+        internal int AvatarIndex;
+
+        public Player()
+        {
+        }
+
+        public Player(string name, int avatarIndex, string path)
+        {
+            AvatarIndex = avatarIndex;
+        }
     }
 }

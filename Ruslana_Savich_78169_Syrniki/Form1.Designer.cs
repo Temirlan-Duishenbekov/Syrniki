@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
-            groupBox1 = new GroupBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            picPlayer1 = new PictureBox();
+            grpPlayer1 = new GroupBox();
             lblpoint1 = new Label();
             point = new Label();
-            groupBox2 = new GroupBox();
+            grpPlayer2 = new GroupBox();
             lblpoint2 = new Label();
             point2 = new Label();
-            pictureBox2 = new PictureBox();
-            start = new Button();
+            picPlayer2 = new PictureBox();
+            btnStart = new Button();
             label1 = new Label();
             grpInit = new GroupBox();
             txtName2 = new TextBox();
@@ -45,51 +46,73 @@
             lblName1 = new Label();
             numericUpDown1 = new NumericUpDown();
             lblRounds = new Label();
-            groupBox3 = new GroupBox();
-            pictureBox3 = new PictureBox();
+            grpAction = new GroupBox();
+            picDice = new PictureBox();
             btnRoll = new Button();
             lblTurn = new Label();
             label2 = new Label();
             lblRound = new Label();
-            groupBox4 = new GroupBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            grpAvatars = new GroupBox();
+            btnReset = new Button();
+            btnSetup2 = new Button();
+            btnSetup1 = new Button();
+            rbAvatar4 = new RadioButton();
+            picAvatarOpt4 = new PictureBox();
+            rbAvatar3 = new RadioButton();
+            picAvatarOpt3 = new PictureBox();
+            rbAvatar2 = new RadioButton();
+            picAvatarOpt2 = new PictureBox();
+            rbAvatar1 = new RadioButton();
+            picAvatarOpt1 = new PictureBox();
+            grpReport = new GroupBox();
+            report = new ListBox();
+            btnShowResult = new Button();
+            ((System.ComponentModel.ISupportInitialize)picPlayer1).BeginInit();
+            grpPlayer1.SuspendLayout();
+            grpPlayer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picPlayer2).BeginInit();
             grpInit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            grpAction.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picDice).BeginInit();
+            grpAvatars.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picAvatarOpt4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picAvatarOpt3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picAvatarOpt2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picAvatarOpt1).BeginInit();
+            grpReport.SuspendLayout();
             SuspendLayout();
             // 
-            // pictureBox1
+            // picPlayer1
             // 
-            pictureBox1.Location = new Point(22, 49);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(114, 133);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            picPlayer1.Image = (Image)resources.GetObject("picPlayer1.Image");
+            picPlayer1.Location = new Point(22, 49);
+            picPlayer1.Name = "picPlayer1";
+            picPlayer1.Size = new Size(129, 133);
+            picPlayer1.SizeMode = PictureBoxSizeMode.StretchImage;
+            picPlayer1.TabIndex = 0;
+            picPlayer1.TabStop = false;
+            picPlayer1.Click += pictureBox1_Click;
             // 
-            // groupBox1
+            // grpPlayer1
             // 
-            groupBox1.Controls.Add(lblpoint1);
-            groupBox1.Controls.Add(point);
-            groupBox1.Controls.Add(pictureBox1);
-            groupBox1.Location = new Point(573, 47);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(365, 212);
-            groupBox1.TabIndex = 1;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "First player";
+            grpPlayer1.Controls.Add(lblpoint1);
+            grpPlayer1.Controls.Add(point);
+            grpPlayer1.Controls.Add(picPlayer1);
+            grpPlayer1.Location = new Point(573, 47);
+            grpPlayer1.Name = "grpPlayer1";
+            grpPlayer1.Size = new Size(365, 212);
+            grpPlayer1.TabIndex = 1;
+            grpPlayer1.TabStop = false;
+            grpPlayer1.Text = "First player";
             // 
             // lblpoint1
             // 
             lblpoint1.AutoSize = true;
-            lblpoint1.Font = new Font("Segoe UI Black", 20F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            lblpoint1.Location = new Point(229, 103);
+            lblpoint1.Font = new Font("Segoe UI Black", 30F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            lblpoint1.Location = new Point(233, 91);
             lblpoint1.Name = "lblpoint1";
-            lblpoint1.Size = new Size(40, 46);
+            lblpoint1.Size = new Size(59, 67);
             lblpoint1.TabIndex = 2;
             lblpoint1.Text = "0";
             lblpoint1.Click += lblpoint1_Click;
@@ -97,33 +120,33 @@
             // point
             // 
             point.AutoSize = true;
-            point.Location = new Point(229, 49);
+            point.Location = new Point(240, 49);
             point.Name = "point";
             point.Size = new Size(42, 20);
             point.TabIndex = 1;
             point.Text = "Point";
             point.Click += label1_Click;
             // 
-            // groupBox2
+            // grpPlayer2
             // 
-            groupBox2.Controls.Add(lblpoint2);
-            groupBox2.Controls.Add(point2);
-            groupBox2.Controls.Add(pictureBox2);
-            groupBox2.Location = new Point(573, 282);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(365, 212);
-            groupBox2.TabIndex = 2;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Second player";
-            groupBox2.Enter += groupBox2_Enter;
+            grpPlayer2.Controls.Add(lblpoint2);
+            grpPlayer2.Controls.Add(point2);
+            grpPlayer2.Controls.Add(picPlayer2);
+            grpPlayer2.Location = new Point(573, 282);
+            grpPlayer2.Name = "grpPlayer2";
+            grpPlayer2.Size = new Size(365, 212);
+            grpPlayer2.TabIndex = 2;
+            grpPlayer2.TabStop = false;
+            grpPlayer2.Text = "Second player";
+            grpPlayer2.Enter += groupBox2_Enter;
             // 
             // lblpoint2
             // 
             lblpoint2.AutoSize = true;
-            lblpoint2.Font = new Font("Segoe UI Black", 20F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            lblpoint2.Location = new Point(229, 103);
+            lblpoint2.Font = new Font("Segoe UI Black", 30F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            lblpoint2.Location = new Point(233, 90);
             lblpoint2.Name = "lblpoint2";
-            lblpoint2.Size = new Size(40, 46);
+            lblpoint2.Size = new Size(59, 67);
             lblpoint2.TabIndex = 2;
             lblpoint2.Text = "0";
             lblpoint2.Click += lblpoint2_Click;
@@ -131,29 +154,33 @@
             // point2
             // 
             point2.AutoSize = true;
-            point2.Location = new Point(229, 49);
+            point2.Location = new Point(240, 49);
             point2.Name = "point2";
             point2.Size = new Size(42, 20);
             point2.TabIndex = 1;
             point2.Text = "Point";
             // 
-            // pictureBox2
+            // picPlayer2
             // 
-            pictureBox2.Location = new Point(22, 49);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(114, 133);
-            pictureBox2.TabIndex = 0;
-            pictureBox2.TabStop = false;
+            picPlayer2.Image = (Image)resources.GetObject("picPlayer2.Image");
+            picPlayer2.InitialImage = null;
+            picPlayer2.Location = new Point(22, 49);
+            picPlayer2.Name = "picPlayer2";
+            picPlayer2.Size = new Size(129, 133);
+            picPlayer2.SizeMode = PictureBoxSizeMode.StretchImage;
+            picPlayer2.TabIndex = 0;
+            picPlayer2.TabStop = false;
+            picPlayer2.WaitOnLoad = true;
             // 
-            // start
+            // btnStart
             // 
-            start.ForeColor = SystemColors.ButtonShadow;
-            start.Location = new Point(573, 522);
-            start.Name = "start";
-            start.Size = new Size(365, 109);
-            start.TabIndex = 3;
-            start.Text = "Start";
-            start.UseVisualStyleBackColor = true;
+            btnStart.ForeColor = SystemColors.ActiveCaptionText;
+            btnStart.Location = new Point(573, 522);
+            btnStart.Name = "btnStart";
+            btnStart.Size = new Size(365, 109);
+            btnStart.TabIndex = 3;
+            btnStart.Text = "Start";
+            btnStart.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -227,27 +254,27 @@
             lblRounds.TabIndex = 6;
             lblRounds.Text = "Rounds";
             // 
-            // groupBox3
+            // grpAction
             // 
-            groupBox3.Controls.Add(pictureBox3);
-            groupBox3.Controls.Add(btnRoll);
-            groupBox3.Controls.Add(lblTurn);
-            groupBox3.Controls.Add(label2);
-            groupBox3.Controls.Add(lblRound);
-            groupBox3.Location = new Point(14, 304);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(315, 327);
-            groupBox3.TabIndex = 6;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Action";
+            grpAction.Controls.Add(picDice);
+            grpAction.Controls.Add(btnRoll);
+            grpAction.Controls.Add(lblTurn);
+            grpAction.Controls.Add(label2);
+            grpAction.Controls.Add(lblRound);
+            grpAction.Location = new Point(14, 304);
+            grpAction.Name = "grpAction";
+            grpAction.Size = new Size(315, 327);
+            grpAction.TabIndex = 6;
+            grpAction.TabStop = false;
+            grpAction.Text = "Action";
             // 
-            // pictureBox3
+            // picDice
             // 
-            pictureBox3.Location = new Point(89, 176);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(125, 127);
-            pictureBox3.TabIndex = 7;
-            pictureBox3.TabStop = false;
+            picDice.Location = new Point(89, 176);
+            picDice.Name = "picDice";
+            picDice.Size = new Size(125, 127);
+            picDice.TabIndex = 7;
+            picDice.TabStop = false;
             // 
             // btnRoll
             // 
@@ -286,56 +313,213 @@
             lblRound.TabIndex = 7;
             lblRound.Text = "Round 0";
             // 
-            // groupBox4
+            // grpAvatars
             // 
-            groupBox4.Location = new Point(345, 49);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(212, 582);
-            groupBox4.TabIndex = 7;
-            groupBox4.TabStop = false;
-            groupBox4.Text = "Avatars";
+            grpAvatars.Controls.Add(btnReset);
+            grpAvatars.Controls.Add(btnSetup2);
+            grpAvatars.Controls.Add(btnSetup1);
+            grpAvatars.Controls.Add(rbAvatar4);
+            grpAvatars.Controls.Add(picAvatarOpt4);
+            grpAvatars.Controls.Add(rbAvatar3);
+            grpAvatars.Controls.Add(picAvatarOpt3);
+            grpAvatars.Controls.Add(rbAvatar2);
+            grpAvatars.Controls.Add(picAvatarOpt2);
+            grpAvatars.Controls.Add(rbAvatar1);
+            grpAvatars.Controls.Add(picAvatarOpt1);
+            grpAvatars.Location = new Point(345, 49);
+            grpAvatars.Name = "grpAvatars";
+            grpAvatars.Size = new Size(212, 582);
+            grpAvatars.TabIndex = 7;
+            grpAvatars.TabStop = false;
+            grpAvatars.Text = "Avatars";
+            // 
+            // btnReset
+            // 
+            btnReset.Location = new Point(18, 506);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(174, 43);
+            btnReset.TabIndex = 13;
+            btnReset.Text = "RESET ALL";
+            btnReset.UseVisualStyleBackColor = true;
+            // 
+            // btnSetup2
+            // 
+            btnSetup2.Location = new Point(18, 447);
+            btnSetup2.Name = "btnSetup2";
+            btnSetup2.Size = new Size(174, 43);
+            btnSetup2.TabIndex = 12;
+            btnSetup2.Text = "Set Up Second Player";
+            btnSetup2.UseVisualStyleBackColor = true;
+            // 
+            // btnSetup1
+            // 
+            btnSetup1.Location = new Point(18, 389);
+            btnSetup1.Name = "btnSetup1";
+            btnSetup1.Size = new Size(174, 43);
+            btnSetup1.TabIndex = 11;
+            btnSetup1.Text = "Set Up First Player";
+            btnSetup1.UseVisualStyleBackColor = true;
+            // 
+            // rbAvatar4
+            // 
+            rbAvatar4.AutoSize = true;
+            rbAvatar4.Location = new Point(18, 313);
+            rbAvatar4.Name = "rbAvatar4";
+            rbAvatar4.Size = new Size(17, 16);
+            rbAvatar4.TabIndex = 10;
+            rbAvatar4.TabStop = true;
+            rbAvatar4.UseVisualStyleBackColor = true;
+            // 
+            // picAvatarOpt4
+            // 
+            picAvatarOpt4.Image = Properties.Resources.Icon04;
+            picAvatarOpt4.Location = new Point(71, 293);
+            picAvatarOpt4.Name = "picAvatarOpt4";
+            picAvatarOpt4.Size = new Size(76, 70);
+            picAvatarOpt4.SizeMode = PictureBoxSizeMode.CenterImage;
+            picAvatarOpt4.TabIndex = 9;
+            picAvatarOpt4.TabStop = false;
+            // 
+            // rbAvatar3
+            // 
+            rbAvatar3.AutoSize = true;
+            rbAvatar3.Location = new Point(18, 224);
+            rbAvatar3.Name = "rbAvatar3";
+            rbAvatar3.Size = new Size(17, 16);
+            rbAvatar3.TabIndex = 8;
+            rbAvatar3.TabStop = true;
+            rbAvatar3.UseVisualStyleBackColor = true;
+            // 
+            // picAvatarOpt3
+            // 
+            picAvatarOpt3.Image = Properties.Resources.Icon03;
+            picAvatarOpt3.Location = new Point(71, 205);
+            picAvatarOpt3.Name = "picAvatarOpt3";
+            picAvatarOpt3.Size = new Size(76, 70);
+            picAvatarOpt3.SizeMode = PictureBoxSizeMode.CenterImage;
+            picAvatarOpt3.TabIndex = 7;
+            picAvatarOpt3.TabStop = false;
+            // 
+            // rbAvatar2
+            // 
+            rbAvatar2.AutoSize = true;
+            rbAvatar2.Location = new Point(18, 140);
+            rbAvatar2.Name = "rbAvatar2";
+            rbAvatar2.Size = new Size(17, 16);
+            rbAvatar2.TabIndex = 6;
+            rbAvatar2.TabStop = true;
+            rbAvatar2.UseVisualStyleBackColor = true;
+            // 
+            // picAvatarOpt2
+            // 
+            picAvatarOpt2.Image = Properties.Resources.Icon02;
+            picAvatarOpt2.Location = new Point(71, 120);
+            picAvatarOpt2.Name = "picAvatarOpt2";
+            picAvatarOpt2.Size = new Size(76, 70);
+            picAvatarOpt2.SizeMode = PictureBoxSizeMode.CenterImage;
+            picAvatarOpt2.TabIndex = 5;
+            picAvatarOpt2.TabStop = false;
+            // 
+            // rbAvatar1
+            // 
+            rbAvatar1.AutoSize = true;
+            rbAvatar1.Location = new Point(18, 60);
+            rbAvatar1.Name = "rbAvatar1";
+            rbAvatar1.Size = new Size(17, 16);
+            rbAvatar1.TabIndex = 4;
+            rbAvatar1.TabStop = true;
+            rbAvatar1.UseVisualStyleBackColor = true;
+            rbAvatar1.CheckedChanged += radioButton1_CheckedChanged;
+            // 
+            // picAvatarOpt1
+            // 
+            picAvatarOpt1.Image = Properties.Resources.Icon01;
+            picAvatarOpt1.Location = new Point(71, 35);
+            picAvatarOpt1.Name = "picAvatarOpt1";
+            picAvatarOpt1.Size = new Size(76, 70);
+            picAvatarOpt1.SizeMode = PictureBoxSizeMode.CenterImage;
+            picAvatarOpt1.TabIndex = 0;
+            picAvatarOpt1.TabStop = false;
+            // 
+            // grpReport
+            // 
+            grpReport.Controls.Add(report);
+            grpReport.Location = new Point(968, 47);
+            grpReport.Name = "grpReport";
+            grpReport.Size = new Size(266, 456);
+            grpReport.TabIndex = 8;
+            grpReport.TabStop = false;
+            grpReport.Text = "Report";
+            // 
+            // report
+            // 
+            report.FormattingEnabled = true;
+            report.Location = new Point(19, 37);
+            report.Name = "report";
+            report.Size = new Size(230, 404);
+            report.TabIndex = 0;
+            report.SelectedIndexChanged += report_SelectedIndexChanged;
+            // 
+            // btnShowResult
+            // 
+            btnShowResult.Location = new Point(968, 522);
+            btnShowResult.Name = "btnShowResult";
+            btnShowResult.Size = new Size(266, 109);
+            btnShowResult.TabIndex = 9;
+            btnShowResult.Text = "SHOW RESULT";
+            btnShowResult.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1246, 680);
-            Controls.Add(groupBox4);
-            Controls.Add(groupBox3);
+            Controls.Add(btnShowResult);
+            Controls.Add(grpReport);
+            Controls.Add(grpAvatars);
+            Controls.Add(grpAction);
             Controls.Add(grpInit);
             Controls.Add(label1);
-            Controls.Add(start);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
+            Controls.Add(btnStart);
+            Controls.Add(grpPlayer2);
+            Controls.Add(grpPlayer1);
             Name = "Form1";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)picPlayer1).EndInit();
+            grpPlayer1.ResumeLayout(false);
+            grpPlayer1.PerformLayout();
+            grpPlayer2.ResumeLayout(false);
+            grpPlayer2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picPlayer2).EndInit();
             grpInit.ResumeLayout(false);
             grpInit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            grpAction.ResumeLayout(false);
+            grpAction.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picDice).EndInit();
+            grpAvatars.ResumeLayout(false);
+            grpAvatars.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picAvatarOpt4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picAvatarOpt3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picAvatarOpt2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picAvatarOpt1).EndInit();
+            grpReport.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
-        private GroupBox groupBox1;
+        private PictureBox picPlayer1;
+        private GroupBox grpPlayer1;
         private Label point;
-        private GroupBox groupBox2;
+        private GroupBox grpPlayer2;
         private Label lblpoint2;
         private Label point2;
-        private PictureBox pictureBox2;
+        private PictureBox picPlayer2;
         private Label lblpoint1;
-        private Button start;
+        private Button btnStart;
         private Label label1;
         private GroupBox grpInit;
         private NumericUpDown numericUpDown1;
@@ -344,12 +528,26 @@
         private Label lblName2;
         private TextBox txtName1;
         private Label lblName1;
-        private GroupBox groupBox3;
-        private PictureBox pictureBox3;
+        private GroupBox grpAction;
+        private PictureBox picDice;
         private Button btnRoll;
         private Label lblTurn;
         private Label label2;
         private Label lblRound;
-        private GroupBox groupBox4;
+        private GroupBox grpAvatars;
+        private PictureBox picAvatarOpt1;
+        private RadioButton rbAvatar1;
+        private RadioButton rbAvatar4;
+        private PictureBox picAvatarOpt4;
+        private RadioButton rbAvatar3;
+        private PictureBox picAvatarOpt3;
+        private RadioButton rbAvatar2;
+        private PictureBox picAvatarOpt2;
+        private Button btnReset;
+        private Button btnSetup2;
+        private Button btnSetup1;
+        private GroupBox grpReport;
+        private ListBox report;
+        private Button btnShowResult;
     }
 }

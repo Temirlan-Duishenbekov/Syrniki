@@ -18,7 +18,7 @@ namespace Ruslana_Savich_78169_Syrniki
         int whoseTurn = 1; // 1 = first player, 2 = second player
         int diceValue1 = 0;
         int diceValue2 = 0;
-        Random random = new Random();
+        Random rnd = new Random();
 
         string resultsFile;
         public Form1()
@@ -28,6 +28,189 @@ namespace Ruslana_Savich_78169_Syrniki
             player2 = new Player();
             resultsFile = Path.Combine(Application.StartupPath, "results.txt");
         }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            LoadAvatarOptions();
+            ShowDefaultAvatars();
+            ResetAll();
+        }
+
+        // load avatar pictures next to radio buttons
+        private void LoadAvatarOptions()
+        {
+            try
+            {
+                string folder = Path.Combine(Application.StartupPath, "Images", "avatars");
+                picAvatarOpt1.Image = Image.FromFile(Path.Combine(folder, "avatar1.png"));
+                picAvatarOpt2.Image = Image.FromFile(Path.Combine(folder, "avatar2.png"));
+                picAvatarOpt3.Image = Image.FromFile(Path.Combine(folder, "avatar3.png"));
+                picAvatarOpt4.Image = Image.FromFile(Path.Combine(folder, "avatar4.png"));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot load avatar images: " + ex.Message);
+            }
+        }
+
+        private void ShowDefaultAvatars()
+        {
+            try
+            {
+                string path = Path.Combine(Application.StartupPath, "Images", "avatars", "default.png");
+                picPlayer1.Image = Image.FromFile(path);
+                picPlayer2.Image = Image.FromFile(path);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Can't load default avatar: " + ex.Message);
+            }
+        }
+        // enable setup buttons only when BOTH names are typed
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            if (gameStarted == true)
+            {
+                return;
+            }
+
+            if (txtName1.Text.Trim() != "" && txtName2.Text.Trim() != "")
+            {
+                if (player1Ready == false)
+                {
+                    btnSetup1.Enabled = true;
+                }
+                if (player2Ready == false)
+                {
+                    btnSetup2.Enabled = true;
+                }
+            }
+            else
+            {
+                if (player1Ready == false)
+                {
+                    btnSetup1.Enabled = false;
+                }
+                if (player2Ready == false)
+                {
+                    btnSetup2.Enabled = false;
+                }
+            }
+        }
+
+        private int GetSelectedAvatarIndex()
+        {
+            if (rbAvatar1.Checked == true)
+            {
+                return 1;
+            }
+            else if (rbAvatar2.Checked == true)
+            {
+                return 2;
+            }
+            else if (rbAvatar3.Checked == true)
+            {
+                return 3;
+            }
+            else if (rbAvatar4.Checked == true)
+            {
+                return 4;
+            }
+            else
+            {
+                return 1; 
+            }
+        }
+
+        private string GetAvatarPath(int index)
+        {
+            string folder = Path.Combine(Application.StartupPath, "Images", "avatars");
+            return Path.Combine(folder, "avatar" + index + ".png");
+        }
+
+        private void btnSetup1_Click(object sender, EventArgs e)
+        {
+            if (txtName1.Text.Trim() == "")
+            {
+                MessageBox.Show("Please enter first player name!");
+                return;
+            }
+            int avatarIndex = GetSelectedAvatarIndex();
+            if (player2Ready == true && player2.AvatarIndex == avatarIndex)
+            {
+                MessageBox.Show("Players cannot choose the same avatar!");
+                return;
+            }
+
+            name1Original = txtName1.Text.Trim();
+            string name = name1Original.ToUpper();
+            string path = GetAvatarPath(avatarIndex);
+
+            player1 = new Player(name, avatarIndex, path);
+            player1Ready = true;
+
+            grpPlayer1.Text = name;
+            try
+            {
+                picPlayer1.Image = Image.FromFile(path);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading avatar: " + ex.Message);
+            }
+
+            txtName1.Enabled = false;
+            btnSetup1.Enabled = false;
+
+            CheckBothReady();
+        }
+        private void btnSetup2_Click(object sender, EventArgs e)
+        {
+            if (txtName2.Text.Trim() == "")
+            {
+                MessageBox.Show("Please enter second player name!");
+                return;
+            }
+
+            int avatarIndex = GetSelectedAvatarIndex();
+
+            // can't choose same avatar
+            if (player1Ready == true && player1.AvatarIndex == avatarIndex)
+            {
+                MessageBox.Show("Players cannot choose the same avatar!");
+                return;
+            }
+
+            name2Original = txtName2.Text.Trim();
+            string name = name2Original.ToUpper();
+            string path = GetAvatarPath(avatarIndex);
+
+            player2 = new Player(name, avatarIndex, path);
+            player2Ready = true;
+
+            grpPlayer2.Text = name;
+            try
+            {
+                picPlayer2.Image = Image.FromFile(path);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading avatar: " + ex.Message);
+            }
+
+            txtName2.Enabled = false;
+            btnSetup2.Enabled = false;
+
+            CheckBothReady();
+        }
+
+        private void CheckBothReady()
+        {
+            if (player1Ready == true && player2Ready == true)
+            {
+                btnStart.Enabled = true;
+            }
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -54,6 +237,25 @@ namespace Ruslana_Savich_78169_Syrniki
         }
 
         private void lblpoint1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void ResetAll()
+        {
+        }
+
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void report_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picAvatarOpt1_Click(object sender, EventArgs e)
         {
 
         }
