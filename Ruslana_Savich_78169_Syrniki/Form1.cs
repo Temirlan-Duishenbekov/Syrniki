@@ -7,6 +7,7 @@ namespace Ruslana_Savich_78169_Syrniki
     {
         Player player1;
         Player player2;
+
         string name1Original = "";
         string name2Original = "";
 
@@ -66,7 +67,7 @@ namespace Ruslana_Savich_78169_Syrniki
             }
         }
         // enable setup buttons only when BOTH names are typed
-        private void txtName_TextChanged(object sender, EventArgs e)
+        private void TxtName_TextChanged(object sender, EventArgs e)
         {
             if (gameStarted == true)
             {
@@ -127,7 +128,7 @@ namespace Ruslana_Savich_78169_Syrniki
             return Path.Combine(folder, "avatar" + index + ".png");
         }
 
-        private void btnSetup1_Click(object sender, EventArgs e)
+        private void BtnSetup1_Click(object sender, EventArgs e)
         {
             if (txtName1.Text.Trim() == "")
             {
@@ -163,7 +164,7 @@ namespace Ruslana_Savich_78169_Syrniki
 
             CheckBothReady();
         }
-        private void btnSetup2_Click(object sender, EventArgs e)
+        private void BtnSetup2_Click(object sender, EventArgs e)
         {
             if (txtName2.Text.Trim() == "")
             {
@@ -210,6 +211,9 @@ namespace Ruslana_Savich_78169_Syrniki
                 btnStart.Enabled = true;
             }
         }
+        
+        private void btnReset_Click(object sender, EventArgs e) => ResetAll();
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -242,6 +246,7 @@ namespace Ruslana_Savich_78169_Syrniki
         }
         private void ResetAll()
         {
+          
         }
 
 

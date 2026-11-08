@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Ruslana_Savich_78169_Syrniki/1.0.0": {
+        "runtime": {
+          "Ruslana_Savich_78169_Syrniki.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Ruslana_Savich_78169_Syrniki/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             picPlayer1 = new PictureBox();
             grpPlayer1 = new GroupBox();
-            lblpoint1 = new Label();
-            point = new Label();
+            lblPoints1 = new Label();
+            point1 = new Label();
             grpPlayer2 = new GroupBox();
-            lblpoint2 = new Label();
+            lblPoints2 = new Label();
             point2 = new Label();
             picPlayer2 = new PictureBox();
             btnStart = new Button();
@@ -44,7 +44,7 @@
             lblName2 = new Label();
             txtName1 = new TextBox();
             lblName1 = new Label();
-            numericUpDown1 = new NumericUpDown();
+            nudRounds = new NumericUpDown();
             lblRounds = new Label();
             grpAction = new GroupBox();
             picDice = new PictureBox();
@@ -72,7 +72,7 @@
             grpPlayer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picPlayer2).BeginInit();
             grpInit.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudRounds).BeginInit();
             grpAction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picDice).BeginInit();
             grpAvatars.SuspendLayout();
@@ -96,60 +96,60 @@
             // 
             // grpPlayer1
             // 
-            grpPlayer1.Controls.Add(lblpoint1);
-            grpPlayer1.Controls.Add(point);
+            grpPlayer1.Controls.Add(lblPoints1);
+            grpPlayer1.Controls.Add(point1);
             grpPlayer1.Controls.Add(picPlayer1);
             grpPlayer1.Location = new Point(573, 47);
             grpPlayer1.Name = "grpPlayer1";
             grpPlayer1.Size = new Size(365, 212);
-            grpPlayer1.TabIndex = 1;
+            grpPlayer1.TabIndex = 3;
             grpPlayer1.TabStop = false;
             grpPlayer1.Text = "First player";
             // 
-            // lblpoint1
+            // lblPoints1
             // 
-            lblpoint1.AutoSize = true;
-            lblpoint1.Font = new Font("Segoe UI Black", 30F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            lblpoint1.Location = new Point(233, 91);
-            lblpoint1.Name = "lblpoint1";
-            lblpoint1.Size = new Size(59, 67);
-            lblpoint1.TabIndex = 2;
-            lblpoint1.Text = "0";
-            lblpoint1.Click += lblpoint1_Click;
+            lblPoints1.AutoSize = true;
+            lblPoints1.Font = new Font("Segoe UI Black", 30F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            lblPoints1.Location = new Point(233, 91);
+            lblPoints1.Name = "lblPoints1";
+            lblPoints1.Size = new Size(59, 67);
+            lblPoints1.TabIndex = 2;
+            lblPoints1.Text = "0";
+            lblPoints1.Click += lblpoint1_Click;
             // 
-            // point
+            // point1
             // 
-            point.AutoSize = true;
-            point.Location = new Point(240, 49);
-            point.Name = "point";
-            point.Size = new Size(42, 20);
-            point.TabIndex = 1;
-            point.Text = "Point";
-            point.Click += label1_Click;
+            point1.AutoSize = true;
+            point1.Location = new Point(240, 49);
+            point1.Name = "point1";
+            point1.Size = new Size(42, 20);
+            point1.TabIndex = 1;
+            point1.Text = "Point";
+            point1.Click += label1_Click;
             // 
             // grpPlayer2
             // 
-            grpPlayer2.Controls.Add(lblpoint2);
+            grpPlayer2.Controls.Add(lblPoints2);
             grpPlayer2.Controls.Add(point2);
             grpPlayer2.Controls.Add(picPlayer2);
             grpPlayer2.Location = new Point(573, 282);
             grpPlayer2.Name = "grpPlayer2";
             grpPlayer2.Size = new Size(365, 212);
-            grpPlayer2.TabIndex = 2;
+            grpPlayer2.TabIndex = 4;
             grpPlayer2.TabStop = false;
             grpPlayer2.Text = "Second player";
             grpPlayer2.Enter += groupBox2_Enter;
             // 
-            // lblpoint2
+            // lblPoints2
             // 
-            lblpoint2.AutoSize = true;
-            lblpoint2.Font = new Font("Segoe UI Black", 30F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            lblpoint2.Location = new Point(233, 90);
-            lblpoint2.Name = "lblpoint2";
-            lblpoint2.Size = new Size(59, 67);
-            lblpoint2.TabIndex = 2;
-            lblpoint2.Text = "0";
-            lblpoint2.Click += lblpoint2_Click;
+            lblPoints2.AutoSize = true;
+            lblPoints2.Font = new Font("Segoe UI Black", 30F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            lblPoints2.Location = new Point(233, 90);
+            lblPoints2.Name = "lblPoints2";
+            lblPoints2.Size = new Size(59, 67);
+            lblPoints2.TabIndex = 2;
+            lblPoints2.Text = "0";
+            lblPoints2.Click += lblpoint2_Click;
             // 
             // point2
             // 
@@ -197,12 +197,12 @@
             grpInit.Controls.Add(lblName2);
             grpInit.Controls.Add(txtName1);
             grpInit.Controls.Add(lblName1);
-            grpInit.Controls.Add(numericUpDown1);
+            grpInit.Controls.Add(nudRounds);
             grpInit.Controls.Add(lblRounds);
             grpInit.Location = new Point(14, 47);
             grpInit.Name = "grpInit";
             grpInit.Size = new Size(315, 232);
-            grpInit.TabIndex = 5;
+            grpInit.TabIndex = 0;
             grpInit.TabStop = false;
             grpInit.Text = "Initializations";
             // 
@@ -211,7 +211,8 @@
             txtName2.Location = new Point(17, 176);
             txtName2.Name = "txtName2";
             txtName2.Size = new Size(209, 27);
-            txtName2.TabIndex = 6;
+            txtName2.TabIndex = 5;
+            txtName2.TextChanged += TxtName_TextChanged;
             // 
             // lblName2
             // 
@@ -227,7 +228,8 @@
             txtName1.Location = new Point(17, 111);
             txtName1.Name = "txtName1";
             txtName1.Size = new Size(209, 27);
-            txtName1.TabIndex = 6;
+            txtName1.TabIndex = 3;
+            txtName1.TextChanged += TxtName_TextChanged;
             // 
             // lblName1
             // 
@@ -238,12 +240,12 @@
             lblName1.TabIndex = 6;
             lblName1.Text = "First player name";
             // 
-            // numericUpDown1
+            // nudRounds
             // 
-            numericUpDown1.Location = new Point(145, 38);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(69, 27);
-            numericUpDown1.TabIndex = 6;
+            nudRounds.Location = new Point(145, 38);
+            nudRounds.Name = "nudRounds";
+            nudRounds.Size = new Size(69, 27);
+            nudRounds.TabIndex = 6;
             // 
             // lblRounds
             // 
@@ -338,27 +340,31 @@
             btnReset.Location = new Point(18, 506);
             btnReset.Name = "btnReset";
             btnReset.Size = new Size(174, 43);
-            btnReset.TabIndex = 13;
+            btnReset.TabIndex = 10;
             btnReset.Text = "RESET ALL";
             btnReset.UseVisualStyleBackColor = true;
             // 
             // btnSetup2
             // 
+            btnSetup2.Enabled = false;
             btnSetup2.Location = new Point(18, 447);
             btnSetup2.Name = "btnSetup2";
             btnSetup2.Size = new Size(174, 43);
-            btnSetup2.TabIndex = 12;
+            btnSetup2.TabIndex = 9;
             btnSetup2.Text = "Set Up Second Player";
             btnSetup2.UseVisualStyleBackColor = true;
+            btnSetup2.Click += BtnSetup2_Click;
             // 
             // btnSetup1
             // 
+            btnSetup1.Enabled = false;
             btnSetup1.Location = new Point(18, 389);
             btnSetup1.Name = "btnSetup1";
             btnSetup1.Size = new Size(174, 43);
-            btnSetup1.TabIndex = 11;
+            btnSetup1.TabIndex = 8;
             btnSetup1.Text = "Set Up First Player";
             btnSetup1.UseVisualStyleBackColor = true;
+            btnSetup1.Click += BtnSetup1_Click;
             // 
             // rbAvatar4
             // 
@@ -366,8 +372,7 @@
             rbAvatar4.Location = new Point(18, 313);
             rbAvatar4.Name = "rbAvatar4";
             rbAvatar4.Size = new Size(17, 16);
-            rbAvatar4.TabIndex = 10;
-            rbAvatar4.TabStop = true;
+            rbAvatar4.TabIndex = 6;
             rbAvatar4.UseVisualStyleBackColor = true;
             // 
             // picAvatarOpt4
@@ -386,8 +391,7 @@
             rbAvatar3.Location = new Point(18, 224);
             rbAvatar3.Name = "rbAvatar3";
             rbAvatar3.Size = new Size(17, 16);
-            rbAvatar3.TabIndex = 8;
-            rbAvatar3.TabStop = true;
+            rbAvatar3.TabIndex = 4;
             rbAvatar3.UseVisualStyleBackColor = true;
             // 
             // picAvatarOpt3
@@ -406,8 +410,7 @@
             rbAvatar2.Location = new Point(18, 140);
             rbAvatar2.Name = "rbAvatar2";
             rbAvatar2.Size = new Size(17, 16);
-            rbAvatar2.TabIndex = 6;
-            rbAvatar2.TabStop = true;
+            rbAvatar2.TabIndex = 2;
             rbAvatar2.UseVisualStyleBackColor = true;
             // 
             // picAvatarOpt2
@@ -423,10 +426,11 @@
             // rbAvatar1
             // 
             rbAvatar1.AutoSize = true;
+            rbAvatar1.Checked = true;
             rbAvatar1.Location = new Point(18, 60);
             rbAvatar1.Name = "rbAvatar1";
             rbAvatar1.Size = new Size(17, 16);
-            rbAvatar1.TabIndex = 4;
+            rbAvatar1.TabIndex = 0;
             rbAvatar1.TabStop = true;
             rbAvatar1.UseVisualStyleBackColor = true;
             rbAvatar1.CheckedChanged += radioButton1_CheckedChanged;
@@ -494,7 +498,7 @@
             ((System.ComponentModel.ISupportInitialize)picPlayer2).EndInit();
             grpInit.ResumeLayout(false);
             grpInit.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudRounds).EndInit();
             grpAction.ResumeLayout(false);
             grpAction.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picDice).EndInit();
@@ -513,16 +517,16 @@
 
         private PictureBox picPlayer1;
         private GroupBox grpPlayer1;
-        private Label point;
+        private Label point1;
         private GroupBox grpPlayer2;
-        private Label lblpoint2;
+        private Label lblPoints2;
         private Label point2;
         private PictureBox picPlayer2;
-        private Label lblpoint1;
+        private Label lblPoints1;
         private Button btnStart;
         private Label label1;
         private GroupBox grpInit;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown nudRounds;
         private Label lblRounds;
         private TextBox txtName2;
         private Label lblName2;
