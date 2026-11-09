@@ -211,7 +211,85 @@ namespace Ruslana_Savich_78169_Syrniki
                 btnStart.Enabled = true;
             }
         }
-        
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            if (player1Ready == false || player2Ready == false)
+            {
+                MessageBox.Show("Please set up both players first!");
+                return;
+            }
+
+            gameStarted = true;
+            remainingRounds = (int)nudRounds.Value;
+            whoseTurn = 1;
+            diceValue1 = 0;
+            diceValue2 = 0;
+
+            player1.ResetPoints();
+            player2.ResetPoints();
+            lblPoints1.Text = "0";
+            lblPoints2.Text = "0";
+
+            lblRound.Text = "Round " + remainingRounds;
+            lblTurn.Text = name1Original + "'s turn";
+
+            btnStart.Enabled = false;
+            btnRoll.Enabled = true;
+            btnSetup1.Enabled = false;
+            btnSetup2.Enabled = false;
+            txtName1.Enabled = false;
+            txtName2.Enabled = false;
+            nudRounds.Enabled = false;
+            rbAvatar1.Enabled = false;
+            rbAvatar2.Enabled = false;
+            rbAvatar3.Enabled = false;
+            rbAvatar4.Enabled = false;
+
+            picDice.Image = null;
+        }
+
+        private void BtnRoll_Click(object sender, EventArgs e)
+        {
+            // random number from 1 to 6
+            int value = rnd.Next(1, 7);
+
+            // show dice image
+            try
+            {
+                string dicePath = Path.Combine(Application.StartupPath, "Images", "dice", "dice" + value + ".png");
+                picDice.Image = Image.FromFile(dicePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading dice image: " + ex.Message);
+            }
+
+            if (whoseTurn == 1)
+            {
+                diceValue1 = value;
+                whoseTurn = 2;
+                lblTurn.Text = name2Original + "'s turn";
+            }
+            else
+            {
+                diceValue2 = value;
+
+                // both players rolled, give point(s)
+                if (diceValue1 == diceValue2)
+                {
+                    player1.AddPoint();
+                    player2.AddPoint();
+                }
+                else if (diceValue1 > diceValue2)
+                {
+                    player1.AddPoint();
+                }
+                else
+                {
+                    player2.AddPoint();
+                }
+            }
+            }
         private void btnReset_Click(object sender, EventArgs e) => ResetAll();
 
 
