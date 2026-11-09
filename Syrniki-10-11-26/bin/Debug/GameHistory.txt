@@ -1,0 +1,17 @@
+========== GAME REPORT ==========
+Date: 11/9/2026 2:22:21 PM
+First Player: asdas
+First Player Score: 0
+Second Player: asd
+Second Player Score: 1
+Total Rounds: 2
+Winner: asd
+=================================
+
+Player 1: asda
+Player 2: asda
+Player 1 Score: 0
+Player 2 Score: 4
+Rounds Played: 4
+-----------------------------
+

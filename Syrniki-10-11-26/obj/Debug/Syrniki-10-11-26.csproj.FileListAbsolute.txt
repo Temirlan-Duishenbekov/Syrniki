@@ -1,0 +1,10 @@
+C:\Users\notbo\OneDrive\Documentos\EdipProject\Syrniki project\Syrniki-10-11-26\Syrniki-10-11-26\bin\Debug\Syrniki-10-11-26.exe.config
+C:\Users\notbo\OneDrive\Documentos\EdipProject\Syrniki project\Syrniki-10-11-26\Syrniki-10-11-26\bin\Debug\Syrniki-10-11-26.exe
+C:\Users\notbo\OneDrive\Documentos\EdipProject\Syrniki project\Syrniki-10-11-26\Syrniki-10-11-26\bin\Debug\Syrniki-10-11-26.pdb
+C:\Users\notbo\OneDrive\Documentos\EdipProject\Syrniki project\Syrniki-10-11-26\Syrniki-10-11-26\obj\Debug\Syrniki-10-11-26.csproj.AssemblyReference.cache
+C:\Users\notbo\OneDrive\Documentos\EdipProject\Syrniki project\Syrniki-10-11-26\Syrniki-10-11-26\obj\Debug\Syrniki_10_11_26.Form1.resources
+C:\Users\notbo\OneDrive\Documentos\EdipProject\Syrniki project\Syrniki-10-11-26\Syrniki-10-11-26\obj\Debug\Syrniki_10_11_26.Properties.Resources.resources
+C:\Users\notbo\OneDrive\Documentos\EdipProject\Syrniki project\Syrniki-10-11-26\Syrniki-10-11-26\obj\Debug\Syrniki-10-11-26.csproj.GenerateResource.cache
+C:\Users\notbo\OneDrive\Documentos\EdipProject\Syrniki project\Syrniki-10-11-26\Syrniki-10-11-26\obj\Debug\Syrniki-10-11-26.csproj.CoreCompileInputs.cache
+C:\Users\notbo\OneDrive\Documentos\EdipProject\Syrniki project\Syrniki-10-11-26\Syrniki-10-11-26\obj\Debug\Syrniki-10-11-26.exe
+C:\Users\notbo\OneDrive\Documentos\EdipProject\Syrniki project\Syrniki-10-11-26\Syrniki-10-11-26\obj\Debug\Syrniki-10-11-26.pdb
