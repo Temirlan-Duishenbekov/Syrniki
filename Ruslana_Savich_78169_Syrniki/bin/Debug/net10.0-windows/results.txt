@@ -1,0 +1,3 @@
+F:3,F:No winner
+ВЦФ:4,ВФЦ:The winner is ВЦФ
+ФЦВ:3,ВФЦ:No winner

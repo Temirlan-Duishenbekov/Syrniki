@@ -65,7 +65,7 @@
             rbAvatar1 = new RadioButton();
             picAvatarOpt1 = new PictureBox();
             grpReport = new GroupBox();
-            report = new ListBox();
+            lstReport = new ListBox();
             btnShowResult = new Button();
             ((System.ComponentModel.ISupportInitialize)picPlayer1).BeginInit();
             grpPlayer1.SuspendLayout();
@@ -181,6 +181,7 @@
             btnStart.TabIndex = 3;
             btnStart.Text = "Start";
             btnStart.UseVisualStyleBackColor = true;
+            btnStart.Click += btnStart_Click_1;
             // 
             // label1
             // 
@@ -243,9 +244,13 @@
             // nudRounds
             // 
             nudRounds.Location = new Point(145, 38);
+            nudRounds.Maximum = new decimal(new int[] { 30, 0, 0, 0 });
+            nudRounds.Minimum = new decimal(new int[] { 5, 0, 0, 0 });
             nudRounds.Name = "nudRounds";
             nudRounds.Size = new Size(69, 27);
             nudRounds.TabIndex = 6;
+            nudRounds.Value = new decimal(new int[] { 5, 0, 0, 0 });
+            nudRounds.ValueChanged += nudRounds_ValueChanged;
             // 
             // lblRounds
             // 
@@ -272,9 +277,11 @@
             // 
             // picDice
             // 
+            picDice.Image = Properties.Resources.Dice1;
             picDice.Location = new Point(89, 176);
             picDice.Name = "picDice";
             picDice.Size = new Size(125, 127);
+            picDice.SizeMode = PictureBoxSizeMode.StretchImage;
             picDice.TabIndex = 7;
             picDice.TabStop = false;
             // 
@@ -286,6 +293,7 @@
             btnRoll.TabIndex = 7;
             btnRoll.Text = "ROLL";
             btnRoll.UseVisualStyleBackColor = true;
+            btnRoll.Click += BtnRoll_Click;
             // 
             // lblTurn
             // 
@@ -343,6 +351,7 @@
             btnReset.TabIndex = 10;
             btnReset.Text = "RESET ALL";
             btnReset.UseVisualStyleBackColor = true;
+            btnReset.Click += btnReset_Click_1;
             // 
             // btnSetup2
             // 
@@ -447,7 +456,7 @@
             // 
             // grpReport
             // 
-            grpReport.Controls.Add(report);
+            grpReport.Controls.Add(lstReport);
             grpReport.Location = new Point(968, 47);
             grpReport.Name = "grpReport";
             grpReport.Size = new Size(266, 456);
@@ -455,14 +464,14 @@
             grpReport.TabStop = false;
             grpReport.Text = "Report";
             // 
-            // report
+            // lstReport
             // 
-            report.FormattingEnabled = true;
-            report.Location = new Point(19, 37);
-            report.Name = "report";
-            report.Size = new Size(230, 404);
-            report.TabIndex = 0;
-            report.SelectedIndexChanged += report_SelectedIndexChanged;
+            lstReport.FormattingEnabled = true;
+            lstReport.Location = new Point(19, 37);
+            lstReport.Name = "lstReport";
+            lstReport.Size = new Size(230, 404);
+            lstReport.TabIndex = 0;
+            lstReport.SelectedIndexChanged += report_SelectedIndexChanged;
             // 
             // btnShowResult
             // 
@@ -472,6 +481,7 @@
             btnShowResult.TabIndex = 9;
             btnShowResult.Text = "SHOW RESULT";
             btnShowResult.UseVisualStyleBackColor = true;
+            btnShowResult.Click += BtnShowResult_Click;
             // 
             // Form1
             // 
@@ -551,7 +561,7 @@
         private Button btnSetup2;
         private Button btnSetup1;
         private GroupBox grpReport;
-        private ListBox report;
+        private ListBox lstReport;
         private Button btnShowResult;
     }
 }

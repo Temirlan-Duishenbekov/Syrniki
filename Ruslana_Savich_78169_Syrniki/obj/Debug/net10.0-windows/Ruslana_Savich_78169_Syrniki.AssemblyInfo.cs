@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ruslana_Savich_78169_Syrniki")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d09e903b46d7847ab51048df1e9ae0b675d164c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bf5cdec58b903b1d757e704458cba18bf220cc22")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ruslana_Savich_78169_Syrniki")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ruslana_Savich_78169_Syrniki")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

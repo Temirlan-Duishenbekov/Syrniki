@@ -2,29 +2,31 @@
 {
     internal class Player
     {
-        internal int AvatarIndex;
+        public string Name = "";
+        public int Points = 0;
+        public int AvatarIndex = 0;
+        public string AvatarPath = "";
 
         public Player()
         {
         }
 
-        public Player(string name, int avatarIndex, string path)
+        public Player(string name, int avatarIndex, string avatarPath)
         {
+            Name = name;
             AvatarIndex = avatarIndex;
+            AvatarPath = avatarPath;
+            Points = 0;
         }
 
-        public object point { get; internal set; }
-        public string Name { get; internal set; }
-        public object points { get; internal set; }
-
-        internal void AddPoint()
+        public void AddPoint()
         {
-            throw new NotImplementedException();
+            Points = Points + 1;
         }
 
-        internal void ResetPoints()
+        public void ResetPoints()
         {
-            throw new NotImplementedException();
+            Points = 0;
         }
     }
 }
